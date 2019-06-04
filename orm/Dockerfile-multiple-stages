@@ -1,0 +1,16 @@
+
+# Build
+
+FROM quay.io/quarkus/centos-quarkus-maven AS build
+
+WORKDIR /build
+
+COPY src src
+COPY pom.xml .
+RUN mvn -f pom.xml -DskipTests -Pnative clean package
+
+# Run
+FROM cescoffier/native-base
+COPY --from=build /build/target/*-runner /application
+EXPOSE 8080
+ENTRYPOINT ["./application", "-Dquarkus.http.host=0.0.0.0"]

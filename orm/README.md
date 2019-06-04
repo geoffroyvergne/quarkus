@@ -36,24 +36,34 @@ docker run \
 
 ## Build
 
-mvn package
+```mvn package```
 
 ## Test
 
-mvn test
+```mvn test```
 
 ## Native image
 
-mvn package -Pnative
+```mvn package -Pnative```
 
 ## Native test
 
-mvn verify -Pnative
+```mvn verify -Pnative```
 
 ## Docker package
 
-mvn package -Pnative -Dnative-image.docker-build=true
+```mvn package -Pnative -Dnative-image.docker-build=true```
 
-docker build -f src/main/docker/Dockerfile.native -t quarkus-orm .
+```docker build -f src/main/docker/Dockerfile.native -t quarkus-orm .```
 
-docker run -i --rm -p 8080:8080 quarkus-orm
+
+## Docker run
+
+```
+docker run -i --rm \
+    --name quarkus-orm \
+    --link postgres \
+    -p 8080:8080 \
+    -e DATABASE_HOST=postgres \
+    quarkus-orm
+```
