@@ -13,7 +13,7 @@ public class PersonRepository implements PanacheRepositoryBase<Person,Integer> {
         return find("name", name).firstResult();
     }
 
-    public Person findById(Integer id){
+    public Person findPersonById(Integer id){
         return find("id", id).firstResult();
     }
 

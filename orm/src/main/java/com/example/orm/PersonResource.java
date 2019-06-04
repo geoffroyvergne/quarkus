@@ -19,12 +19,6 @@ public class PersonResource {
     @Inject
     PersonRepository personRepository;
 
-    /*@GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "hello";
-    }*/
-
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response list() {
