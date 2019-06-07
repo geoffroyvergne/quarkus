@@ -3,11 +3,12 @@ package com.example.orm;
 import io.quarkus.hibernate.orm.panache.PanacheRepositoryBase;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @ApplicationScoped
+@Transactional
 public class PersonRepository implements PanacheRepositoryBase<Person,Integer> {
-    // put your custom logic here as instance methods
 
     public Person findByName(String name){
         return find("name", name).firstResult();
@@ -27,5 +28,4 @@ public class PersonRepository implements PanacheRepositoryBase<Person,Integer> {
 
     public List<Person> findAllPerson() { return listAll(); }
 
-    public void deleteById(Integer id) { delete("id", id); }
 }

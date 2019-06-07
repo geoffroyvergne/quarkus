@@ -29,6 +29,16 @@ public class Person extends PanacheEntityBase {
     public static void deleteStefs(){
         delete("name", "Stef");
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", birth=" + birth +
+                ", status=" + status +
+                '}';
+    }
 }
 
 enum Status {

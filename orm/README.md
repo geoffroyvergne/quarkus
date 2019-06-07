@@ -32,8 +32,6 @@ docker run \
 
 ```mvn compile quarkus:dev```
 
-```curl http://localhost:8080/person```
-
 ## Build
 
 ```mvn package```
@@ -56,7 +54,6 @@ docker run \
 
 ```docker build -f src/main/docker/Dockerfile.native -t quarkus-orm .```
 
-
 ## Docker run
 
 ```
@@ -66,4 +63,23 @@ docker run -i --rm \
     -p 8080:8080 \
     -e DATABASE_HOST=postgres \
     quarkus-orm
+```
+
+## Queries
+
+```curl http://localhost:8080/person```
+```curl http://localhost:8080/person/9```
+
+```
+curl -X PUT \
+    -H 'Content-Type: application/json' \
+    -d '{"birth":"2019-06-07","name":"Test","status":"Alive"}' \
+    localhost:8080/person
+```
+
+```
+curl -X DELETE \
+    -H 'Content-Type: application/json' \
+    -d '{"birth":"2019-06-07","id":9,"name":"Test","status":"Alive"}' \
+    localhost:8080/person
 ```
