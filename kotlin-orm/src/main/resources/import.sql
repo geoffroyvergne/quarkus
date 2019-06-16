@@ -1,0 +1,8 @@
+INSERT INTO person("birth", "name", "status") VALUES (NOW(), 'Penny', 0)
+INSERT INTO person("birth", "name", "status") VALUES (NOW(), 'Sheldon', 0)
+INSERT INTO person("birth", "name", "status") VALUES (NOW(), 'Amy', 0)
+INSERT INTO person("birth", "name", "status") VALUES (NOW(), 'Leonard', 0)
+INSERT INTO person("birth", "name", "status") VALUES (NOW(), 'Bernadette', 0)
+INSERT INTO person("birth", "name", "status") VALUES (NOW(), 'Raj', 0)
+INSERT INTO person("birth", "name", "status") VALUES (NOW(), 'Howard', 0)
+INSERT INTO person("birth", "name", "status") VALUES (NOW(), 'Priya', 0)

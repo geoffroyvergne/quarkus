@@ -17,5 +17,6 @@
         <module>base</module>
         <module>orm</module>
         <module>rest-kotlin</module>
+        <module>kotlin-orm</module>
     </modules>
 </project>
